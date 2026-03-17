@@ -1,0 +1,17 @@
+{
+  "name": "ricettario-server",
+  "version": "0.0.1",
+  "description": "Server del servizio di gestione delle ricette",
+  "main": "bin/ricettario.js",
+  "bin": {
+    "ricettario-server": "bin/ricettario.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giovanni Locatelli",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
