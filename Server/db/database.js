@@ -12,10 +12,12 @@ const initDb = () => {
             db.run(`CREATE TABLE IF NOT EXISTS "oggetto" (
                 "id" INTEGER PRIMARY KEY AUTOINCREMENT,
                 "Nome" TEXT NOT NULL,
-                "Incrediente" BOOLEAN DEFAULT 0,
+                "Ingrediente" BOOLEAN DEFAULT 0,
                 "TempoTotale" TEXT,
                 "Difficoltà" INTEGER,
-                "NumeroPersone" INTEGER
+                "NumeroPersone" INTEGER,
+                "Link" TEXT,
+                "Immagine" TEXT
             )`);
 
             db.run(`CREATE TABLE IF NOT EXISTS "passaggi" (

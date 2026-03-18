@@ -24,3 +24,5 @@ Sulla sinistra è presente un menù per andare a filtrare gli elementi che si vu
 Saranno quindi presenti altre 2 tipologie di pagina:
 - Lista di elementi: che possono essere gli ingredienti o le ricette
 - Inserimento elementi: che possono essere gli ingredienti o le ricette
+
+Per le ricette e gli ingredienti, saranno visualizzabili delle foto che rappresentino il piatto

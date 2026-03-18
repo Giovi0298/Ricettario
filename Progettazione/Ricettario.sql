@@ -1,7 +1,7 @@
 CREATE TABLE "oggetto" (
   "id" int PRIMARY KEY,
   "Nome" text not null,
-  "Incrediente" bool default false,
+  "Ingrediente" bool default false,
   "TempoTotale" time,
   "Difficoltà" int,
   "NumeroPersone" int
