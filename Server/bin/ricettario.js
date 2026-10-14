@@ -22,8 +22,16 @@ if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
 
+const publicDir = path.join(__dirname, '..', 'public');
+if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir);
+}
+
 // Serve uploaded files statically
 app.use('/uploads', express.static(uploadDir));
+
+// Serve WebApp static files
+app.use(express.static(publicDir));
 
 // Multer configuration
 const storage = multer.diskStorage({
@@ -53,6 +61,14 @@ initDb()
     .catch((err) => {
         console.error('Failed to initialize database:', err);
     });
+
+// SPA Routing: Redirect all unknown requests to index.html
+app.get((req, res, next) => {
+    if (req.path.startsWith('/uploads') || req.path.startsWith('/socket.io')) {
+        return next();
+    }
+    res.sendFile(path.join(publicDir, 'index.html'));
+});
 
 // Socket.io connection
 io.on('connection', (socket) => {
